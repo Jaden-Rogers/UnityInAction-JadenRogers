@@ -21,6 +21,9 @@ public class WanderingAI : MonoBehaviour
 
     void Update()
     {
+        Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
+        Debug.DrawRay(transform.position, forward * 10, Color.red);
+
         if (_alive)
         {
             transform.Translate(0, 0, speed * Time.deltaTime);
